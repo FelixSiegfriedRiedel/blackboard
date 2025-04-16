@@ -1,12 +1,12 @@
 package de.htwberlin.blackboard.blackboard;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.Id;
 
 import java.util.Date;
-@Entity(name = "note")
+//@Entity(name = "note")
 public class Note {
-    @Id
+    //@Id
     private int id = 0;
     public  static int idNext;
 
@@ -23,7 +23,11 @@ public class Note {
     private int width;
     private int height;
 
-
+    public Note(String title, String content, String author) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+    }
 
     public String getTitle() {
         return title;
