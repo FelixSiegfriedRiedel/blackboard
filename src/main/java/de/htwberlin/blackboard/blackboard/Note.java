@@ -8,7 +8,6 @@ import java.util.Date;
 public class Note {
     //@Id
     private int id = 0;
-    public  static int idNext;
 
     private String title;
     private String content;
