@@ -32,9 +32,6 @@ public class Note {
         return title;
     }
 
-    public static int getIdNext() {
-        return idNext;
-    }
 
     public String getContent() {
         return content;
