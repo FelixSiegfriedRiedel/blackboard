@@ -22,10 +22,13 @@ public class Note {
     private int width;
     private int height;
 
-    public Note(String title, String content, String author) {
+    public Note(String title, String content, String author, int xPos, int yPos) {
         this.title = title;
         this.content = content;
         this.author = author;
+
+        this.xPosition = xPos;
+        this.yPosition = yPos;
     }
 
     public String getTitle() {
