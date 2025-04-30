@@ -8,7 +8,6 @@ import java.util.Date;
 public class Note {
     //@Id
     private int id = 0;
-    public  static int idNext;
 
     private String title;
     private String content;
@@ -33,9 +32,6 @@ public class Note {
         return title;
     }
 
-    public static int getIdNext() {
-        return idNext;
-    }
 
     public String getContent() {
         return content;
@@ -74,7 +70,7 @@ public class Note {
     }
 
     public void setId(int id) {
-        this.id = idNext++;
+        this.id = id;
     }
 
     public int getId() {
@@ -83,10 +79,6 @@ public class Note {
 
     public void setxPosition(int xPosition) {
         this.xPosition = xPosition;
-    }
-
-    public static void setIdNext(int idNext) {
-        Note.idNext = idNext;
     }
 
     public void setTitle(String title) {
