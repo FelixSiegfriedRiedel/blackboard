@@ -12,14 +12,7 @@ public class NoteController {
     private final List<Note> notes = new ArrayList<>();
 
     public NoteController() {
-        notes.add(new Note(
-                "Konzert 10.05. im Fischladen",
-                "3 Bands, Punk, Rock, 10€",
-                "Fischer",
-                200,
-                100
-                ));
-        notes.add(new Note("Konzert 15.05. im Fischladen", "3 Bands, Punk, Rock, 10€", "Fischer", 500, 400));
+
     }
 
     @GetMapping("/notes")
