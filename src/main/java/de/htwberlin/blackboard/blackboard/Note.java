@@ -3,6 +3,8 @@ package de.htwberlin.blackboard.blackboard;
 //import jakarta.persistence.Entity;
 //import jakarta.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 //@Entity(name = "note")
 public class Note {
@@ -14,6 +16,7 @@ public class Note {
     private String author;
     private String color;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private Date creationDate;
     private Date terminationDate;
 
@@ -22,11 +25,11 @@ public class Note {
     private int width;
     private int height;
 
-    public Note(String title, String content, String author, int xPos, int yPos) {
+    public Note(String title, String content, String author, int xPos, int yPos, Date creationDate) {
         this.title = title;
         this.content = content;
         this.author = author;
-
+        this.creationDate = creationDate;
         this.xPosition = xPos;
         this.yPosition = yPos;
     }
