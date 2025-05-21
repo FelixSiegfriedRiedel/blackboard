@@ -16,6 +16,7 @@ public class Note {
     private String author;
     private String color;
 
+
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private Date creationDate;
     private Date terminationDate;

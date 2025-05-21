@@ -5,11 +5,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-// @CrossOrigin(origins = "https://blackboard-frontend-inaa.onrender.com")
- @CrossOrigin(origins = "http://localhost:5173")
+ @CrossOrigin(origins = "https://blackboard-frontend-inaa.onrender.com")
+// @CrossOrigin(origins = "http://localhost:5173")
 
 @RestController
 public class NoteController {
+
 
     private final List<Note> notes = new ArrayList<>();
 
