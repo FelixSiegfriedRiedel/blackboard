@@ -1,15 +1,19 @@
 package de.htwberlin.blackboard.blackboard;
 
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import javax.annotation.processing.Generated;
 import java.util.Date;
-//@Entity(name = "note")
+@Entity
 public class Note {
-    //@Id
-    private int id = 0;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String title;
     private String content;
@@ -25,6 +29,8 @@ public class Note {
     private int yPosition;
     private int width;
     private int height;
+
+    public Note() {}
 
     public Note(String title, String content, String author, int xPos, int yPos, Date creationDate) {
         this.title = title;
@@ -76,11 +82,11 @@ public class Note {
         return height;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
