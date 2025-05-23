@@ -86,3 +86,4 @@ replay_pid*
 
 .env
 /src/main/resources/env.properties
+/env.properties
