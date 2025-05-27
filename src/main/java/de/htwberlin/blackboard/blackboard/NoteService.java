@@ -22,4 +22,7 @@ public class NoteService {
     public List<Note> getAll() {
         return (List<Note>) repo.findAll();
     }
+    public void delete(Long id) {
+        repo.deleteById(id);
+    }
 }

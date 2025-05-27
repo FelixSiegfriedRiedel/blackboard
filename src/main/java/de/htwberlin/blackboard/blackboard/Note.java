@@ -4,16 +4,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.util.Date;
+
 @Entity
 public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String title;
     private String content;
     private String author;
@@ -31,7 +29,7 @@ public class Note {
 
     public Note() {}
 
-    public Note(String title, String content, String author, int xPos, int yPos, Date creationDate) {
+    public Note( String title, String content, String author, int xPos, int yPos, Date creationDate) {
         this.title = title;
         this.content = content;
         this.author = author;
@@ -45,6 +43,12 @@ public class Note {
     }
 
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public Long getId() {
+        return id;
+    }
     public String getContent() {
         return content;
     }
@@ -84,5 +88,21 @@ public class Note {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public void setTerminationDate(Date terminationDate) {
+        this.terminationDate = terminationDate;
+    }
+
+    public void setyPosition(int yPosition) {
+        this.yPosition = yPosition;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 }
