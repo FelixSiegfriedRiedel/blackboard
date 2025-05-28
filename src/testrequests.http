@@ -1,0 +1,22 @@
+### GET all notes
+GET http://localhost:8080/notes
+
+### POST a new note
+POST http://localhost:8080/notes
+Content-Type: application/json
+
+{
+  "title": "Note",
+  "content": "Content",
+  "author": "Author",
+  "xPos": 100,
+  "yPos": 20,
+  "creationDate": ""
+}
+
+### GET a specific note
+GET http://localhost:8080/notes/47
+
+### DELETE a specific note
+DELETE http://localhost:8080/notes/47
+
