@@ -25,4 +25,17 @@ public class NoteService {
     public void delete(Long id) {
         repo.deleteById(id);
     }
+    public void updateNote(Note updatedNote, Long id) {
+        repo.findById(id)
+                .map(existingNote -> {
+                    existingNote.setTitle(updatedNote.getTitle());
+                    existingNote.setContent(updatedNote.getContent());
+
+                    return repo.save(existingNote);
+                })
+                .orElseGet(() -> {
+                    return repo.save(updatedNote);
+                });
+    }
+
 }

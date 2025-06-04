@@ -20,3 +20,15 @@ GET http://localhost:8080/notes/47
 ### DELETE a specific note
 DELETE http://localhost:8080/notes/47
 
+### PUT to update a specific note
+PUT http://localhost:8080/notes/109
+Content-Type: application/json
+
+{
+  "title": "NewTitle4",
+  "content": "Content",
+  "author": "Author",
+  "xPos": 100,
+  "yPos": 20,
+  "creationDate": ""
+}
