@@ -70,11 +70,11 @@ public class Note {
         return terminationDate;
     }
 
-    public int getXPosition() {
+    public int getxPosition() {
         return xPosition;
     }
 
-    public int getYPosition() {
+    public int getyPosition() {
         return yPosition;
     }
 
@@ -86,21 +86,6 @@ public class Note {
         return height;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
@@ -108,10 +93,6 @@ public class Note {
 
     public void setTerminationDate(Date terminationDate) {
         this.terminationDate = terminationDate;
-    }
-
-    public void setxPosition(int xPosition) {
-        this.xPosition = xPosition;
     }
 
     public void setyPosition(int yPosition) {
