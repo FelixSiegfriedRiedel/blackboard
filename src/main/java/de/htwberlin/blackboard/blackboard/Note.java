@@ -106,4 +106,20 @@ public class Note {
     public void setHeight(int height) {
         this.height = height;
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "{id=%d, title='%s', content='%s', author='%s', color='%s', creationDate=%s, terminationDate=%s, xPosition=%d, yPosition=%d, width=%d, height=%d}",
+                id, title, content, author, color, creationDate, terminationDate, xPosition, yPosition, width, height);
+
+    }
+
+    public int getXPosition() {
+        return xPosition;
+    }
+
+    public int getYPosition() {
+        return yPosition;
+    }
 }
