@@ -22,7 +22,7 @@ public class NoteControllerTest {
 
     @Test
     public void testGetNote() throws Exception {
-        Note note = new Note("Test Note", "This is a test note", "Test Author", 50, 100, new java.util.Date(), "yellow");
+        Note note = new Note("Test Note", "This is a test note", "Test Author", 50, 100, new java.util.Date(),new java.util.Date(),    "yellow");
         note.setId(1L);
         when(noteService.get(1L)).thenReturn(note);
 

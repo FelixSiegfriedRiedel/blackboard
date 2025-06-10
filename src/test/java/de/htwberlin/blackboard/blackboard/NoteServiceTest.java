@@ -25,7 +25,7 @@ public class NoteServiceTest {
     @Test
     @DisplayName("should find a Note by its id")
     void testGet() {
-        var note = new Note("Test Note", "This is a test note", "Test Author",50 ,100 , new java.util.Date(), "yellow");
+        var note = new Note("Test Note", "This is a test note", "Test Author",50 ,100 , new java.util.Date(), new java.util.Date(), "yellow");
         doReturn(Optional.of(note)).when(repository).findById(110L);
         Note actual = service.get(110L);
 
