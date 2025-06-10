@@ -20,8 +20,8 @@ public class Note {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private Date creationDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private Date terminationDate;
-
     private int xPosition;
     private int yPosition;
     private int width;

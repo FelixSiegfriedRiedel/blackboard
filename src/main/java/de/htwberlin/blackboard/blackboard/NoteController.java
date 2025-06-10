@@ -1,6 +1,9 @@
 package de.htwberlin.blackboard.blackboard;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 import java.util.List;
 
 
@@ -14,6 +17,8 @@ public class NoteController {
 
     @PostMapping("/notes")
     public Note addNote(@RequestBody Note note) {
+        long millisProTag = 24L * 60L * 60L * 1000L; // 24 Stunden in Millisekunden
+        note.setTerminationDate(new java.util.Date(System.currentTimeMillis() + millisProTag));
         note.setCreationDate( new java.util.Date());
         Note saved = noteService.save(note);
         System.out.println("Note erhalten: " + note.getTitle() + " " + note.getId());
@@ -36,5 +41,23 @@ public class NoteController {
         Long noteId = Long.parseLong(id);
         System.out.println("Note löschen: " + noteId);
         noteService.delete(noteId);
+    }
+
+    /**
+     * check every minute if there are notes that have expired
+     * maybe change to one time a day
+     */
+    @Scheduled(fixedRate = 60000)
+    public void checkAndDeleteExpiredNotes() {
+        List<Note> allNotes = noteService.getAll();
+        Date currentTime = new Date();
+
+        for (Note note : allNotes) {
+            if (note.getTerminationDate() != null &&
+                    note.getTerminationDate().before(currentTime)) {
+                noteService.delete(note.getId());
+                System.out.println("Abgelaufene Notiz gelöscht: " + note.getId());
+                 }
+             }
         }
-}
+    }

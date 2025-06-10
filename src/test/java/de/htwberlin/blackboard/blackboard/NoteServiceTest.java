@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
+import java.util.Date;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -21,11 +23,10 @@ public class NoteServiceTest {
     private NoteRepository repository;
 
     @Test
-    @DisplayName("should find a thing by its id")
+    @DisplayName("should find a Note by its id")
     void testGet() {
         var note = new Note("Test Note", "This is a test note", "Test Author",50 ,100 , new java.util.Date(), "yellow");
         doReturn(Optional.of(note)).when(repository).findById(110L);
-
         Note actual = service.get(110L);
 
         assertEquals("Test Author", actual.getAuthor());
