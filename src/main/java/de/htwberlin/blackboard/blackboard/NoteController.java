@@ -36,5 +36,12 @@ public class NoteController {
         Long noteId = Long.parseLong(id);
         System.out.println("Note löschen: " + noteId);
         noteService.delete(noteId);
-        }
+    }
+
+    @PutMapping("/notes/{id}")
+    public void updateNote(@RequestBody Note updatedNote, @PathVariable String id) {
+        Long noteId = Long.parseLong(id);
+        System.out.println("Note ändern: " + noteId);
+        noteService.updateNote(updatedNote, noteId);
+    }
 }
