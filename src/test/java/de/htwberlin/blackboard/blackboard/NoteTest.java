@@ -16,12 +16,13 @@ public class NoteTest {
       int TEST_Y_POS = 200;
       int TEST_WIDTH = 300;
       int TEST_HEIGHT = 400;
-      Date TEST_DATE = new Date();
+      Date TEST_CREATION_DATE = new Date();
+    Date TEST_TERMINTATON_DATE = new Date();
 
     @BeforeEach
     void setUp() {
         testNote = new Note(TEST_NAME, TEST_CONTENT, TEST_AUTHOR,
-                TEST_X_POS, TEST_Y_POS, TEST_DATE, TEST_COLOR);
+                TEST_X_POS, TEST_Y_POS, TEST_CREATION_DATE, TEST_TERMINTATON_DATE, TEST_COLOR);
         testNote.setId(1L);
         testNote.setWidth(TEST_WIDTH);
         testNote.setHeight(TEST_HEIGHT);
@@ -36,7 +37,8 @@ public class NoteTest {
         assertEquals(TEST_X_POS, testNote.getXPosition());
         assertEquals(TEST_Y_POS, testNote.getYPosition());
         assertEquals(TEST_COLOR, testNote.getColor());
-        assertEquals(TEST_DATE, testNote.getCreationDate());
+        assertEquals(TEST_CREATION_DATE, testNote.getCreationDate());
+        assertEquals(TEST_TERMINTATON_DATE, testNote.getTerminationDate());
     }
 
     @Test
@@ -45,7 +47,7 @@ public class NoteTest {
                         "color='%s', creationDate=%s, terminationDate=%s, xPosition=%d, yPosition=%d, " +
                         "width=%d, height=%d}",
                 testNote.getId(), TEST_NAME, TEST_CONTENT, TEST_AUTHOR, TEST_COLOR,
-                TEST_DATE, null, TEST_X_POS, TEST_Y_POS, TEST_WIDTH, TEST_HEIGHT);
+                TEST_CREATION_DATE, TEST_TERMINTATON_DATE, TEST_X_POS, TEST_Y_POS, TEST_WIDTH, TEST_HEIGHT);
 
         assertEquals(expectedString, testNote.toString());
         System.out.println(testNote.toString());
