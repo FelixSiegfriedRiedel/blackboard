@@ -1,12 +1,53 @@
+# Project config
 HELP.md
-.gradle
+.env
+.env.properties
+/src/main/resources/env.properties
+/env.properties
+
+# Build outputs
+.gradle/
 build/
-!gradle/wrapper/gradle-wrapper.jar
+out/
+bin/
 !**/src/main/**/build/
 !**/src/test/**/build/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+!**/src/main/**/out/
+!**/src/test/**/out/
 
-.env.properties
-### STS ###
+# Gradle wrapper (must be committed)
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+!gradlew
+!gradlew.bat
+
+# Logs
+*.log
+hs_err_pid*
+replay_pid*
+
+# Java
+*.class
+
+# Archives / packaged files
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# IDEs and tooling
+## IntelliJ IDEA
+.idea
+*.iws
+*.iml
+*.ipr
+
+## Eclipse / Spring Tool Suite
 .apt_generated
 .classpath
 .factorypath
@@ -14,63 +55,23 @@ build/
 .settings
 .springBeans
 .sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-
-### NetBeans ###
+## NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
-/.nb-gradle/
+/nb-gradle/
 
-### VS Code ###
+## VS Code
 .vscode/
 
-# Compiled class file
-*.class
-
-
-
-
-
-# Log file
-*.log
-
-
-
-
-
-
-
-
-
-
-# BlueJ files
+# Other IDEs
+# BlueJ
 *.ctxt
-
-
-
-
-
-
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
-
-
-
 
 # Package Files #
 *.jar

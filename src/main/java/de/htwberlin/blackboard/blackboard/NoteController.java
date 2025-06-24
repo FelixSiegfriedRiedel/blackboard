@@ -14,7 +14,7 @@ public class NoteController {
     @Autowired
     private NoteService noteService;
 
-
+    @CrossOrigin
     @PostMapping("/notes")
     public Note addNote(@RequestBody Note note) {
         long millisProTag = 24L * 60L * 60L * 1000L; // 24 Stunden in Millisekunden
@@ -25,17 +25,20 @@ public class NoteController {
         return saved;
     }
 
+    @CrossOrigin
     @GetMapping("/notes/{id}")
     public Note getNote(@PathVariable String id) {
         Long noteId = Long.parseLong(id);
         return noteService.get(noteId);
     }
 
+    @CrossOrigin
     @GetMapping("/notes")
     public List<Note> getNotes() {
         return noteService.getAll();
     }
 
+    @CrossOrigin
     @DeleteMapping("/notes/{id}")
     public void deleteNote(@PathVariable String id) {
         Long noteId = Long.parseLong(id);
