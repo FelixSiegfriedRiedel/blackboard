@@ -36,6 +36,7 @@ public class Note {
         this.creationDate = creationDate;
         this.xPosition = xPosition;
         this.yPosition = yPosition;
+        this.terminationDate = terminationDate
         this.color = color;
     }
 
