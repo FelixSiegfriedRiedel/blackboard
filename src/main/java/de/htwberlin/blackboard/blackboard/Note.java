@@ -29,14 +29,14 @@ public class Note {
 
     public Note() {}
 
-    public Note( String title, String content, String author, int xPosition, int yPosition, Date creationDate, String color) {
+    public Note( String title, String content, String author, int xPosition, int yPosition, Date creationDate, Date terminationDate, String color) {
         this.title = title;
         this.content = content;
         this.author = author;
         this.creationDate = creationDate;
         this.xPosition = xPosition;
         this.yPosition = yPosition;
-        this.terminationDate = terminationDate
+        this.terminationDate = terminationDate;
         this.color = color;
     }
 
