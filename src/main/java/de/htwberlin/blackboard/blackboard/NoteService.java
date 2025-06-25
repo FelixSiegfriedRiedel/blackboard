@@ -30,6 +30,7 @@ public class NoteService {
                 .map(existingNote -> {
                     existingNote.setTitle(updatedNote.getTitle());
                     existingNote.setContent(updatedNote.getContent());
+                    existingNote.setAuthor(updatedNote.getAuthor());
                     existingNote.setxPosition(updatedNote.getxPosition());
                     existingNote.setyPosition(updatedNote.getyPosition());
                     return repo.save(existingNote);
