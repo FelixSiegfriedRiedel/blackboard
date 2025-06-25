@@ -29,14 +29,14 @@ public class Note {
 
     public Note() {}
 
-    public Note( String title, String content, String author, int xPos, int yPos, Date creationDate, Date terminationDate , String color) {
+    public Note( String title, String content, String author, int xPosition, int yPosition, Date creationDate, Date terminationDate, String color) {
         this.title = title;
         this.content = content;
         this.author = author;
         this.creationDate = creationDate;
+        this.xPosition = xPosition;
+        this.yPosition = yPosition;
         this.terminationDate = terminationDate;
-        this.xPosition = xPos;
-        this.yPosition = yPos;
         this.color = color;
     }
 
@@ -100,12 +100,32 @@ public class Note {
         this.yPosition = yPosition;
     }
 
+    public void setxPosition(int xPosition) {
+        this.xPosition = xPosition;
+    }
+
     public void setWidth(int width) {
         this.width = width;
     }
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     @Override

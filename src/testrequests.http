@@ -9,8 +9,8 @@ Content-Type: application/json
   "title": "Note",
   "content": "Content",
   "author": "Author",
-  "xPos": 100,
-  "yPos": 20,
+  "xPosition": 100,
+  "yPosition": 20,
   "creationDate": ""
 }
 
@@ -18,5 +18,17 @@ Content-Type: application/json
 GET http://localhost:8080/notes/47
 
 ### DELETE a specific note
-DELETE http://localhost:8080/notes/47
+DELETE http://localhost:8080/notes/113
 
+### PUT to update a specific note
+PUT http://localhost:8080/notes/113
+Content-Type: application/json
+
+{
+  "title": "TEST",
+  "content": "Content",
+  "author": "Author",
+  "xPosition": 100,
+  "yPosition": 20,
+  "creationDate": ""
+}
