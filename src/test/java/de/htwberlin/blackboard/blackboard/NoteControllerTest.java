@@ -27,7 +27,7 @@ public class NoteControllerTest {
         when(noteService.get(1L)).thenReturn(note);
 
 
-        mockMvc.perform(get("/notes/{id}", "1")
+        mockMvc.perform(get("/notes/{id}", "1" )
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
