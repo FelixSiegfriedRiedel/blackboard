@@ -13,7 +13,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedOrigins("http://localhost:3000",
                                 "https://blackboard-backend-hd9c.onrender.com",
                                 "http://localhost:5173",
-                        "https://blackboard-frontend-hd9c.onrender.com")
+                       " https://blackboard-frontend-inaa.onrender.com")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
     }
 }
