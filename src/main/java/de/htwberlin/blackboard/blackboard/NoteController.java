@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
-
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 public class NoteController {
 
@@ -25,26 +25,27 @@ public class NoteController {
         return saved;
     }
 
-   
+   @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/notes/{id}")
     public Note getNote(@PathVariable String id) {
         Long noteId = Long.parseLong(id);
         return noteService.get(noteId);
     }
 
-    
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/notes")
     public List<Note> getNotes() {
         return noteService.getAll();
     }
 
-
+    @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/notes/{id}")
     public void deleteNote(@PathVariable String id) {
         Long noteId = Long.parseLong(id);
         System.out.println("Note löschen: " + noteId);
         noteService.delete(noteId);
     }
+
     @PutMapping("/notes/{id}")
     public void updateNote(@RequestBody Note updatedNote, @PathVariable String id) {
         Long noteId = Long.parseLong(id);
