@@ -1,5 +1,7 @@
 package de.htwberlin.blackboard.blackboard;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
@@ -14,24 +16,29 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(NoteController.class)
 public class NoteControllerTest {
+    private static final Logger log = LoggerFactory.getLogger(NoteControllerTest.class);
     @Autowired
     private MockMvc mockMvc;
 
     @MockitoBean
     private NoteService noteService;
 
+
     @Test
-    public void testGetNote() throws Exception {
-        Note note = new Note("Test Note", "This is a test note", "Test Author", 50, 100, new java.util.Date(),new java.util.Date(),    "yellow");
+    public void testGetNoteById() throws Exception {
+        log.info("Starting testGetNoteById");
+        Note note = new Note("Test Note", "This is a test note", "Test Author", 50, 100, new java.util.Date(), new java.util.Date(), "yellow");
         note.setId(1L);
+
         when(noteService.get(1L)).thenReturn(note);
 
-
-        mockMvc.perform(get("/notes/{id}", "1" )
+        mockMvc.perform(get("/notes/1")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().string(containsString("Test Note")))
                 .andExpect(content().string(containsString("Test Author")));
+
+        log.info("Finished testGetNoteById");
     }
 }
