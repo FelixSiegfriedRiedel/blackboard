@@ -12,7 +12,8 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins("http://localhost:3000",
                                 "https://blackboard-backend-hd9c.onrender.com",
-                                "http://localhost:5173")
+                                "http://localhost:5173",
+                        "https://blackboard-frontend-hd9c.onrender.com")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
     }
 }
