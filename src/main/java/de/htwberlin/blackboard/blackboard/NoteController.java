@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:5173")
+
 @RestController
+@CrossOrigin(origins = "https://blackboard-frontend-inaa.onrender.com")
 public class NoteController {
 
 
@@ -25,20 +26,20 @@ public class NoteController {
         return saved;
     }
 
-   @CrossOrigin(origins = "http://localhost:5173")
+   @CrossOrigin(origins = "https://blackboard-frontend-inaa.onrender.com")
     @GetMapping("/notes/{id}")
     public Note getNote(@PathVariable String id) {
         Long noteId = Long.parseLong(id);
         return noteService.get(noteId);
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://blackboard-frontend-inaa.onrender.com")
     @GetMapping("/notes")
     public List<Note> getNotes() {
         return noteService.getAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://blackboard-frontend-inaa.onrender.com")
     @DeleteMapping("/notes/{id}")
     public void deleteNote(@PathVariable String id) {
         Long noteId = Long.parseLong(id);
