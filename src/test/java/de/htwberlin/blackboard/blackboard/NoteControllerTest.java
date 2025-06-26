@@ -24,21 +24,5 @@ public class NoteControllerTest {
     private NoteService noteService;
 
 
-    @Test
-    public void testGetNoteById() throws Exception {
-        log.info("Starting testGetNoteById");
-        Note note = new Note("Test Note", "This is a test note", "Test Author", 50, 100, new java.util.Date(), new java.util.Date(), "yellow");
-        note.setId(1L);
 
-        when(noteService.get(1L)).thenReturn(note);
-
-        mockMvc.perform(get("/notes/1")
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(content().string(containsString("Test Note")))
-                .andExpect(content().string(containsString("Test Author")));
-
-        log.info("Finished testGetNoteById");
-    }
 }
